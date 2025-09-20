@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     //declare the java fields
-    Button play, stop;
+    Button play, stop, pause;
     MediaPlayer mediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +29,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mediaPlayer = MediaPlayer.create(this,
-                Uri.parse("https://utkarshpandey.com/assets/sound/nuclear-siren.mp3"));
+                Uri.parse("https://gothic-amaranth-gel7sx8g6w.edgeone.app/Tu%20Hain%20Toh%20Mr%20And%20Mrs%20Mahi%20128%20Kbps.mp3"));
         //to initialize the java fields from UI widgets
         play = findViewById(R.id.btn_play);
         stop = findViewById(R.id.btn_stop);
+        pause = findViewById(R.id.btn_pause);
         //to click on the buttons
         play.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +41,20 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "playing",
                         Toast.LENGTH_SHORT).show();
                 mediaPlayer.start();
+            }
+        });
+
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.stop();
+            }
+        });
+
+        pause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.pause();
             }
         });
 

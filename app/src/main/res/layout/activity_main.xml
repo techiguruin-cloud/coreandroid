@@ -30,5 +30,11 @@
         android:text="Stop"
         app:layout_constraintTop_toBottomOf="@+id/btn_play"
         android:id="@+id/btn_stop"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pause"
+        app:layout_constraintTop_toBottomOf="@+id/btn_stop"
+        android:id="@+id/btn_pause"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
